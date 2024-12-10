@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWBarberPoleView",
       "state" : {
-        "branch" : "main",
-        "revision" : "b4aa647dc93a5aea65139980656da817d1840b6f"
+        "revision" : "c9e8f26f1afc96d31ad8f729b895a393ffa1ff7b",
+        "version" : "1.0.0"
       }
     }
   ],
