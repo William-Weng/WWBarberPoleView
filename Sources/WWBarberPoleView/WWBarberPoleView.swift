@@ -14,6 +14,7 @@ open class WWBarberPoleView: UIView {
     private let heightRatio = 2.0               // 高度的放大比例 (因為旋轉條角度旋轉後，會造成高度變低)
     private let earlyStartPositionX = 100.0     // 旋轉條提前開始的位置 (因為旋轉條角度旋轉後，會造成高度變低，看起來不會是從頭開始的)
     private let rotationAngle = 45.0            // 旋轉條的旋轉角度
+    private let defaultColor: UIColor = .red    // 旋轉條的預設顏色
 }
 
 // MARK: - 公開函式
@@ -86,9 +87,12 @@ private extension WWBarberPoleView {
     func layerMaker(with index: Int, width: CGFloat, colors: [UIColor]) -> CALayer {
         
         let layer = CALayer()
+        var color = defaultColor
+        
+        if (!colors.isEmpty) { color = colors[safe: index % colors.count] ?? defaultColor }
         
         layer.frame = CGRect(origin: .zero, size: .init(width: width, height: frame.height * heightRatio))
-        layer.backgroundColor = colors[index % colors.count].cgColor
+        layer.backgroundColor = color.cgColor
         layer.setAffineTransform(CGAffineTransform(rotationAngle: rotationAngle._radian()))
         layer.position = CGPoint(x: -earlyStartPositionX, y: bounds.midY)
         

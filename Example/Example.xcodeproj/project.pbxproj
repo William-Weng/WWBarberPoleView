@@ -16,7 +16,8 @@
 		817568142CA2C33600B24577 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817568122CA2C33600B24577 /* Constant.swift */; };
 		817568152CA2C33600B24577 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817568132CA2C33600B24577 /* Extension.swift */; };
 		818A7B242D07E07D00097ADC /* WWBarberPoleView in Frameworks */ = {isa = PBXBuildFile; productRef = 818A7B232D07E07D00097ADC /* WWBarberPoleView */; };
-		818A7B272D07E3C800097ADC /* WWBarberPoleView in Frameworks */ = {isa = PBXBuildFile; productRef = 818A7B262D07E3C800097ADC /* WWBarberPoleView */; };
+		818A7B2A2D07E8CC00097ADC /* WWBarberPoleView in Frameworks */ = {isa = PBXBuildFile; productRef = 818A7B292D07E8CC00097ADC /* WWBarberPoleView */; };
+		818A7B2D2D07E9E200097ADC /* WWBarberPoleView in Frameworks */ = {isa = PBXBuildFile; productRef = 818A7B2C2D07E9E200097ADC /* WWBarberPoleView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +38,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81149DC32D07D88000BBD5DA /* WWBarberPoleView in Frameworks */,
-				818A7B272D07E3C800097ADC /* WWBarberPoleView in Frameworks */,
+				818A7B2A2D07E8CC00097ADC /* WWBarberPoleView in Frameworks */,
 				818A7B242D07E07D00097ADC /* WWBarberPoleView in Frameworks */,
+				818A7B2D2D07E9E200097ADC /* WWBarberPoleView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +137,8 @@
 			packageProductDependencies = (
 				81149DC22D07D88000BBD5DA /* WWBarberPoleView */,
 				818A7B232D07E07D00097ADC /* WWBarberPoleView */,
-				818A7B262D07E3C800097ADC /* WWBarberPoleView */,
+				818A7B292D07E8CC00097ADC /* WWBarberPoleView */,
+				818A7B2C2D07E9E200097ADC /* WWBarberPoleView */,
 			);
 			productName = Example;
 			productReference = 817567F82CA2C2B400B24577 /* Example.app */;
@@ -166,7 +169,7 @@
 			);
 			mainGroup = 817567EF2CA2C2B400B24577;
 			packageReferences = (
-				818A7B252D07E3C800097ADC /* XCRemoteSwiftPackageReference "WWBarberPoleView" */,
+				818A7B2B2D07E9E200097ADC /* XCRemoteSwiftPackageReference "WWBarberPoleView" */,
 			);
 			productRefGroup = 817567F92CA2C2B400B24577 /* Products */;
 			projectDirPath = "";
@@ -433,11 +436,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		818A7B252D07E3C800097ADC /* XCRemoteSwiftPackageReference "WWBarberPoleView" */ = {
+		818A7B2B2D07E9E200097ADC /* XCRemoteSwiftPackageReference "WWBarberPoleView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWBarberPoleView";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 1.0.0;
 			};
 		};
@@ -452,9 +455,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWBarberPoleView;
 		};
-		818A7B262D07E3C800097ADC /* WWBarberPoleView */ = {
+		818A7B292D07E8CC00097ADC /* WWBarberPoleView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 818A7B252D07E3C800097ADC /* XCRemoteSwiftPackageReference "WWBarberPoleView" */;
+			productName = WWBarberPoleView;
+		};
+		818A7B2C2D07E9E200097ADC /* WWBarberPoleView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 818A7B2B2D07E9E200097ADC /* XCRemoteSwiftPackageReference "WWBarberPoleView" */;
 			productName = WWBarberPoleView;
 		};
 /* End XCSwiftPackageProductDependency section */
