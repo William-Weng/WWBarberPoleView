@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "wwbarberpoleview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWBarberPoleView",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b4aa647dc93a5aea65139980656da817d1840b6f"
+      }
+    }
+  ],
+  "version" : 2
+}
