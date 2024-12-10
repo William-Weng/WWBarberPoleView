@@ -19,6 +19,7 @@ dependencies: [
 |函式|功能|
 |-|-|
 |start(direction:rule:colorType:duration:width:spacing:colors:)|開始執行|
+|stop()|動畫停止|
 
 ### Example
 ```swift

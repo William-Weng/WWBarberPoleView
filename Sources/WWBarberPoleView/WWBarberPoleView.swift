@@ -15,6 +15,7 @@ open class WWBarberPoleView: UIView {
     private let defaultColor: UIColor = .red    // 旋轉條的預設顏色
     
     private var rotationAngle = 45.0            // 旋轉條的旋轉角度
+    private var poleLayer: CAGradientLayer?     // 記錄Layer層
 }
 
 // MARK: - 公開函式
@@ -36,6 +37,7 @@ public extension WWBarberPoleView {
         
         clipsToBounds = true
         self.rotationAngle = rotationAngle
+        stop()
         
         for index in 0..<count {
             
@@ -50,7 +52,14 @@ public extension WWBarberPoleView {
             
             poleLayer.add(animation, forKey: "flowAnimation")
             layer.addSublayer(poleLayer)
+            self.poleLayer = poleLayer
         }
+    }
+    
+    /// [動畫停止](https://github.com/Juanpe/SkeletonView)
+    func stop() {
+        poleLayer?.removeAllAnimations()
+        poleLayer?.removeFromSuperlayer()
     }
 }
 
