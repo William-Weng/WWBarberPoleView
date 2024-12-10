@@ -27,7 +27,7 @@ private extension ViewController {
     func demo1() {
         barberPoleView1.layer.borderWidth = 5
         barberPoleView1.layer.borderColor = UIColor.black.cgColor
-        barberPoleView1.start()
+        barberPoleView1.start(colors: [.red, .green, .blue])
     }
     
     func demo2() {

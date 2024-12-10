@@ -12,8 +12,9 @@ open class WWBarberPoleView: UIView {
 
     private let earlyBeginTime = 1000.0         // 提前開始的時間 (避免一開始沒有旋轉條)
     private let heightRatio = 2.0               // 高度的放大比例 (因為旋轉條角度旋轉後，會造成高度變低)
-    private let rotationAngle = 45.0            // 旋轉條的旋轉角度
     private let defaultColor: UIColor = .red    // 旋轉條的預設顏色
+    
+    private var rotationAngle = 45.0            // 旋轉條的旋轉角度
 }
 
 // MARK: - 公開函式
@@ -24,14 +25,17 @@ public extension WWBarberPoleView {
     ///   - direction: 動畫的方向
     ///   - rule: 進位規則
     ///   - colorType: 混色的樣式
+    ///   - rotationAngle: 旋轉角度
     ///   - duration: [時間間隔](https://landpattern2630.wixsite.com/landpattern/copy-of-design-3)
     ///   - width: 寬度
     ///   - spacing: 間隔
     ///   - colors: 顏色
-    func start(direction: Direction = .right, rule: FloatingPointRoundingRule = .up, colorType: ColorType = .general, duration: CFTimeInterval = 5.0, width: Double = 20.0, spacing: Double = 0.0, colors: [UIColor] = [.red ,.yellow, .green]) {
+    func start(direction: Direction = .right, rule: FloatingPointRoundingRule = .up, colorType: ColorType = .general, rotationAngle: CGFloat = 45.0, duration: CFTimeInterval = 5.0, width: Double = 20.0, spacing: Double = 0.0, colors: [UIColor] = []) {
         
         let count = count(direction: direction, frame: bounds, width: width, spacing: spacing, rule: rule)
+        
         clipsToBounds = true
+        self.rotationAngle = rotationAngle
         
         for index in 0..<count {
             
