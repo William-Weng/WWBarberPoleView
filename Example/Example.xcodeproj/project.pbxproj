@@ -10,6 +10,7 @@
 		81149DC32D07D88000BBD5DA /* WWBarberPoleView in Frameworks */ = {isa = PBXBuildFile; productRef = 81149DC22D07D88000BBD5DA /* WWBarberPoleView */; };
 		815BA8702D0832BD005ACAC5 /* WWBarberPoleView in Frameworks */ = {isa = PBXBuildFile; productRef = 815BA86F2D0832BD005ACAC5 /* WWBarberPoleView */; };
 		815BA8732D083A32005ACAC5 /* WWBarberPoleView in Frameworks */ = {isa = PBXBuildFile; productRef = 815BA8722D083A32005ACAC5 /* WWBarberPoleView */; };
+		815BA8762D083AA2005ACAC5 /* WWBarberPoleView in Frameworks */ = {isa = PBXBuildFile; productRef = 815BA8752D083AA2005ACAC5 /* WWBarberPoleView */; };
 		817567FC2CA2C2B400B24577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817567FB2CA2C2B400B24577 /* AppDelegate.swift */; };
 		817568002CA2C2B400B24577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817567FF2CA2C2B400B24577 /* ViewController.swift */; };
 		817568032CA2C2B400B24577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817568012CA2C2B400B24577 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 				815BA8732D083A32005ACAC5 /* WWBarberPoleView in Frameworks */,
 				818A7B2A2D07E8CC00097ADC /* WWBarberPoleView in Frameworks */,
 				818A7B242D07E07D00097ADC /* WWBarberPoleView in Frameworks */,
+				815BA8762D083AA2005ACAC5 /* WWBarberPoleView in Frameworks */,
 				815BA8702D0832BD005ACAC5 /* WWBarberPoleView in Frameworks */,
 				818A7B302D080AA900097ADC /* WWBarberPoleView in Frameworks */,
 			);
@@ -145,6 +147,7 @@
 				818A7B2F2D080AA900097ADC /* WWBarberPoleView */,
 				815BA86F2D0832BD005ACAC5 /* WWBarberPoleView */,
 				815BA8722D083A32005ACAC5 /* WWBarberPoleView */,
+				815BA8752D083AA2005ACAC5 /* WWBarberPoleView */,
 			);
 			productName = Example;
 			productReference = 817567F82CA2C2B400B24577 /* Example.app */;
@@ -175,6 +178,7 @@
 			);
 			mainGroup = 817567EF2CA2C2B400B24577;
 			packageReferences = (
+				815BA8742D083AA2005ACAC5 /* XCRemoteSwiftPackageReference "WWBarberPoleView" */,
 			);
 			productRefGroup = 817567F92CA2C2B400B24577 /* Products */;
 			projectDirPath = "";
@@ -440,6 +444,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		815BA8742D083AA2005ACAC5 /* XCRemoteSwiftPackageReference "WWBarberPoleView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/William-Weng/WWBarberPoleView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		81149DC22D07D88000BBD5DA /* WWBarberPoleView */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -451,6 +466,11 @@
 		};
 		815BA8722D083A32005ACAC5 /* WWBarberPoleView */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = WWBarberPoleView;
+		};
+		815BA8752D083AA2005ACAC5 /* WWBarberPoleView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 815BA8742D083AA2005ACAC5 /* XCRemoteSwiftPackageReference "WWBarberPoleView" */;
 			productName = WWBarberPoleView;
 		};
 		818A7B232D07E07D00097ADC /* WWBarberPoleView */ = {
