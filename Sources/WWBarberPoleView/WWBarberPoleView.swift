@@ -23,18 +23,25 @@ public extension WWBarberPoleView {
     /// - Parameters:
     ///   - direction: 動畫的方向
     ///   - rule: 進位規則
+    ///   - colorType: 混色的樣式
     ///   - duration: [時間間隔](https://landpattern2630.wixsite.com/landpattern/copy-of-design-3)
     ///   - width: 寬度
     ///   - spacing: 間隔
     ///   - colors: 顏色
-    func start(direction: Direction = .right, rule: FloatingPointRoundingRule = .up, duration: CFTimeInterval = 5.0, width: Double = 20.0, spacing: Double = 0.0, colors: [UIColor] = [.red ,.yellow, .green]) {
+    func start(direction: Direction = .right, rule: FloatingPointRoundingRule = .up, colorType: ColorType = .general, duration: CFTimeInterval = 5.0, width: Double = 20.0, spacing: Double = 0.0, colors: [UIColor] = [.red ,.yellow, .green]) {
         
         let count = count(direction: direction, frame: bounds, width: width, spacing: spacing, rule: rule)
         clipsToBounds = true
         
         for index in 0..<count {
             
-            let poleLayer = layerMaker(with: index, direction: direction, width: width, colors: colors)
+            let poleLayer: CAGradientLayer
+            
+            switch colorType {
+            case .general: poleLayer = generalLayerMaker(with: index, direction: direction, width: width, colors: colors)
+            case .gradient(let startPoint, let endPoint): poleLayer = gradientLayerMaker(with: index, direction: direction, width: width, colors: colors, startPoint: startPoint, endPoint: endPoint)
+            }
+            
             let animation = animationMaker(with: index, direction: direction, duration: duration, count: count, position: poleLayer.position, width: width, spacing: spacing)
             
             poleLayer.add(animation, forKey: "flowAnimation")
@@ -108,16 +115,16 @@ private extension WWBarberPoleView {
         return animation
     }
     
-    /// [旋轉條產生器](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/讓-calayer-繞著自己的中心點旋轉-9d2497ef401d)
+    /// [旋轉條紋產生器](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/讓-calayer-繞著自己的中心點旋轉-9d2497ef401d)
     /// - Parameters:
     ///   - index: Int
     ///   - direction: 動畫的方向
     ///   - width: 寬度
     ///   - colors: 顏色
-    /// - Returns: CALayer
-    func layerMaker(with index: Int, direction: Direction, width: CGFloat, colors: [UIColor]) -> CALayer {
+    /// - Returns: CAGradientLayer
+    func generalLayerMaker(with index: Int, direction: Direction, width: CGFloat, colors: [UIColor]) -> CAGradientLayer {
         
-        let layer = CALayer()
+        let layer = CAGradientLayer()
         let size: CGSize
         let position: CGPoint
         let radian: CGFloat
@@ -140,6 +147,32 @@ private extension WWBarberPoleView {
         layer.backgroundColor = color.cgColor
         layer.setAffineTransform(CGAffineTransform(rotationAngle: radian))
         layer.position = position
+
+        return layer
+    }
+    
+    /// 漸層旋轉條紋產生器
+    /// - Parameters:
+    ///   - index: Int
+    ///   - direction: 動畫的方向
+    ///   - width: 寬度
+    ///   - colors: 顏色
+    ///   - startPoint: 漸層方向起始點
+    ///   - endPoint: 漸層方向結束點
+    /// - Returns: CALayer
+    func gradientLayerMaker(with index: Int, direction: Direction, width: CGFloat, colors: [UIColor], startPoint: CGPoint, endPoint: CGPoint) -> CAGradientLayer {
+        
+        let layer = generalLayerMaker(with: index, direction: direction, width: width, colors: colors)
+        let newColors: [UIColor]
+        
+        switch direction {
+        case .up, .down: newColors = colors.reversed()
+        case .left, .right: newColors = colors
+        }
+        
+        layer.colors = newColors.map { $0.cgColor }
+        layer.startPoint = startPoint
+        layer.endPoint = endPoint
 
         return layer
     }

@@ -17,4 +17,10 @@ extension WWBarberPoleView {
         case left
         case right
     }
+    
+    // MARK: - 混色的樣式
+    public enum ColorType {
+        case general
+        case gradient(_ startPoint: CGPoint, _ endPoint: CGPoint)
+    }
 }

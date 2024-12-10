@@ -31,7 +31,7 @@
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAy-ds-KOc" customClass="WWBarberPoleView" customModule="WWBarberPoleView">
                                 <rect key="frame" x="175" y="409.5" width="64" height="388.5"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="e6G-vU-QVW"/>
                                 </constraints>
