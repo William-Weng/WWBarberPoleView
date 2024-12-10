@@ -11,14 +11,14 @@
 ### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWBarberPoleView.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWBarberPoleView.git", .upToNextMajor(from: "1.1.0"))
 ]
 ```
 
 ### [Function - 可用函式](https://ezgif.com/video-to-webp)
 |函式|功能|
 |-|-|
-|start(duration:width:spacing:colors:)|開始執行|
+|start(direction:rule:duration:width:spacing:colors:)|開始執行|
 
 ### Example
 ```swift
@@ -27,14 +27,28 @@ import WWBarberPoleView
 
 final class ViewController: UIViewController {
     
-    @IBOutlet weak var barberPoleView: WWBarberPoleView!
-    
+    @IBOutlet weak var barberPoleView1: WWBarberPoleView!
+    @IBOutlet weak var barberPoleView2: WWBarberPoleView!
+
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        barberPoleView.layer.borderWidth = 5
-        barberPoleView.layer.borderColor = UIColor.black.cgColor
-        barberPoleView.start()
+        demo1()
+        demo2()
+    }
+}
+
+private extension ViewController {
+    
+    func demo1() {
+        barberPoleView1.layer.borderWidth = 5
+        barberPoleView1.layer.borderColor = UIColor.black.cgColor
+        barberPoleView1.start()
+    }
+    
+    func demo2() {
+        barberPoleView2.layer.borderWidth = 5
+        barberPoleView2.layer.borderColor = UIColor.black.cgColor
+        barberPoleView2.start(direction: .down, colors: [.red])
     }
 }
 ```
