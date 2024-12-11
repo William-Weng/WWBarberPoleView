@@ -36,8 +36,8 @@ public extension WWBarberPoleView {
         let count = count(direction: direction, frame: bounds, width: width, spacing: spacing, rule: rule)
         
         clipsToBounds = true
-        self.rotationAngle = rotationAngle
         stop()
+        self.rotationAngle = rotationAngle
         
         for index in 0..<count {
             
